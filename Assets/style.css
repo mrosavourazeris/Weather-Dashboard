@@ -1,0 +1,21 @@
+#myNavbar {
+    height: 100px;
+}
+
+#myNavbarText{
+    font-size: 50px;
+}
+
+.firstRow{
+border: solid;
+border-color: red;
+height: 200px;
+}
+
+.secondRow{
+border: solid;
+border-color: black;
+height: 800px;
+}
+
+
