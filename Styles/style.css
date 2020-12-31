@@ -11,7 +11,7 @@
 /* border: solid; */
 /* border-color: black; */
 height: 800px;
-margin-top: 10px;
+margin-top: 50px;
 }
 
 #firstColumn{
@@ -19,6 +19,7 @@ margin-top: 10px;
     border-color: black; */
     height: 800px;
     background-color: rgb(243, 243, 243);
+    margin-right: 20px;
 }
 
 #secondColumn{
@@ -28,8 +29,8 @@ margin-top: 10px;
 }
 
 #firstColFirstRow{
-    border: solid;
-    border-color: black;
+    /* border: solid;
+    border-color: black; */
     height: 100px;
 }
 
@@ -46,9 +47,9 @@ margin-top: 10px;
 }
 
 #secondColSecondRow{
-    border: solid;
-    border-color: black;
-    height: 500px;
+    /* border: solid;
+    border-color: black; */
+    height: 75px;
 }
 
 #firstColSecondRowCol{
@@ -62,3 +63,18 @@ margin-top: 10px;
     height: 50px;
     text-align: center;
 }
+
+#thirdColSecondRow{
+    /* border: solid;
+    border-color: black; */
+    height: 425px;
+}
+
+.fiveDay {
+    /* background-color: blue; */
+    border: solid;
+    margin: 15px;
+    margin-top: 30px;
+    height: 85%;
+}
+
