@@ -31,11 +31,11 @@
             <div id="firstColumn" class="col-3 mainColumns">
                 <div id="firstColFirstRow" class="row">
                     <div>
-                        <h4>Search with a Zip Code:</h4>
+                        <h4>Search with City Name:</h4>
                     </div>
                     
                     <div class="input-group mt-1 mb-5">
-                        <input id="userInput" type="text" class="form-control" placeholder= "Zip Code" aria-label="Text input with checkbox">
+                        <input id="userInput" type="text" class="form-control" placeholder= "City" aria-label="Text input with checkbox">
                         <div class="input-group-text">
                             <button id= "searchBtn" class= "btn-primary" ><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
@@ -43,39 +43,34 @@
                 </div>
                 <div id="firstColSecondRow" class="row">
                     <div id="firstColSecondRowCol" class="col">
-                        <div id="his1" class="row cityRow">Previous city</div>
-                        <div id="his2" class="row cityRow">Previous city</div>
-                        <div id="his3" class="row cityRow">Previous city</div>
-                        <div id="his4" class="row cityRow">Previous city</div>
-                        <div id="his5" class="row cityRow">Previous city</div>
-                        <div id="his6" class="row cityRow">Previous city</div>
-                        <div id="his7" class="row cityRow">Previous city</div>
-                        <div id="his8" class="row cityRow">Previous city</div>
-                        <div id="his9" class="row cityRow">Previous city</div>
-                        <div id="his10" class="row cityRow">Previous city</div>
-                        <div id="his11" class="row cityRow">Previous city</div>
-                        <div id="his12" class="row cityRow">Previous city</div>
-                        <div id="his13" class="row cityRow">Previous city</div>
-                        <div id="his14" class="row cityRow">Previous city</div>
+                        <ul id="ulList" class="list-group">
+                            <!-- <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item">Cras justo odio</li> -->
+                          </ul>
                     </div>
                 </div>
             </div>
             <div id="secondColumn" class="col-8 mainColumns">
-                <div id="secondColFirstRow" class="row">
-                    
-                    <!-- <h2 id="cityAndDate"class="ml-5 mt-3"></h2>
-                    <p id="temperature"></p>
-                    <p id="humidity"></p>
-                    <p id="windSpeed"></p>
-                    <p id="uvIndex"></p> -->
-                </div>
+                <div id="secondColFirstRow" class="row"></div>
                 <div id="secondColSecondRow" class="row">
                     <h2 class="ml-5 mt-3">5-Day Forecast:</h2>
                 </div>
 
-                <div id="thirdColSecondRow" class="row">
-        
-                </div>
+                <div id="thirdColSecondRow" class="row"></div>
 
             </div>
 
@@ -95,6 +90,9 @@
 
     <!-- jquery cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <!-- Moment.js cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
 
     <!-- My js -->
     <script src="Scripts/script.js"></script>
