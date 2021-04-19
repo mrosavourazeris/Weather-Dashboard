@@ -1,59 +1,29 @@
+//global variables
 var firstColSecondRowCol = document.getElementById('firstColSecondRowCol')
 var userInput = document.getElementById("userInput")
 var searchBtn = document.getElementById("searchBtn")
 var myUl = document.getElementById('ulList');
 var dateNow = moment().format('LL');
-// var dateOne = moment(dateNow).add(1, 'days');
-
-console.log(dateNow)
-// console.log(dateOne)
-
-//Event listener for search button, whatever is entered in the input field, is saved to zipcode variable, which in turn is added to API URL to allow the URL to be dynamic
-
-
-
 var userCity;
 var userCities = JSON.parse(localStorage.getItem("City")) || [];
 
 
-for (i = 0; i < userCities.length; i++){
-var myLi = document.createElement('li')
-myLi.setAttribute('class', 'list-group-item')
-myLi.innerHTML = userCities[i]
-myUl.prepend(myLi)
-$(firstColSecondRowCol).append(myUl)
-}
-
-searchBtn.addEventListener('click', function (){
-
-    $('#secondColFirstRow').empty()
-    $('#thirdColSecondRow').empty()
-
-    userCity = userInput.value;
-    userCities.push(userCity)
-    localStorage.setItem("City", JSON.stringify(userCities));
 
 
-    var myLi = document.createElement('li')
-    myLi.setAttribute('class', 'list-group-item')
-    myLi.innerHTML = userCity;
-    myUl.prepend(myLi)
-    $(firstColSecondRowCol).append(myUl)
-
+function myApiCall (e, isSearch = false){
+    console.log(e.target.innerText)
+    console.log(isSearch)
     
+    var apiKey = "18212af488de4eb5a28215154211403";
+    var apiKey2 = "be2cec0d0cab5aac4d45f963faab36c2"
+    var myURL = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${isSearch ? userInput.value : e.target.innerText}&days=6`;
+    var myURL2 = `http://api.openweathermap.org/data/2.5/forecast?q=${isSearch ? userInput.value : e.target.innerText}&appid=${apiKey2}`
 
-    var apiKey = "3c75bca6ddbb4f7ba74230517202912";
-    var myURL = `http://api.weatherapi.com/v1/forecast.json?key=3c75bca6ddbb4f7ba74230517202912&q=${userCity}&days=6`;
-    // var myURL = `http://api.weatherapi.com/v1/forecast.json?key=3c75bca6ddbb4f7ba74230517202912&q=${userCity}&days=6`;
-    
-    
-    console.log(myURL)
     $.ajax({
-        url: myURL
+        url: myURL2
     }).then(function(response){
-        console.log(response)
+        console.log("API Response", response)
         var foreCastDays = response.forecast.forecastday;
-    
         //function to add current city, date, weather icon, temp, humidity, wind speed, and UV index to div with class secondColFirstRow
         function currentDay (){
             var cityDateIcon = document.createElement('h3');
@@ -82,14 +52,27 @@ searchBtn.addEventListener('click', function (){
             $('#secondColFirstRow').append(currentWind)
     
             var uV = document.createElement('p')
+            var uVNumber = document.createElement('div')
+            uVNumber.setAttribute('id', 'uVNumber')
             uV.setAttribute('id', 'uvIndex')
-            uV.innerHTML = 'UV Index: ' + response.current.uv
+            // uvResponse = response.current.uv
+            // --------------------------------------------------------------------------------------------------------------------------------------------Left off here-
+            // console.log(typeof response.current.uv)
+            uVNumber.innerHTML = response.current.uv
+            uV.innerHTML = 'UV Index: ' + uvResponse
             $('#secondColFirstRow').append(uV)
+
+            if (uvResponse <= 2){
+                uV.setAttribute('style', 'background-color: green;');
+            }
+            
     
         }
     
         currentDay()
-    
+
+       
+
         //for loop to append 5 day forecast into div with class thirdColSecondRow
         for ( i = 0; i < foreCastDays.length; i++ ){
             var colFiveDay = document.createElement('div');
@@ -113,11 +96,47 @@ searchBtn.addEventListener('click', function (){
     
             $("#thirdColSecondRow").append(colFiveDay);
         }
+        
     })
+}
+
+function renderCities (){
+    myUl.innerHTML = ""
+    //for loop that allows a new li element to be created for each object inside the userCities array
+    for (i = 0; i < (userCities.length > 16?16:userCities.length); i++){
+        var myLi = document.createElement('li')
+        myLi.setAttribute('class', 'list-group-item')
+        myLi.innerHTML = userCities[i]
+        myUl.append(myLi)
+        $('#firstColSecondRowCol').append(myUl)
+    }
+}
+
+renderCities()
+
+myUl.addEventListener('click', function (e){
+    $('#secondColFirstRow').empty()
+    $('#thirdColSecondRow').empty()
+    // console.log(e.target.innerText)
     
+    myApiCall(e)
+
 })
 
+//Event listener for search button, whatever is entered in the input field, is saved to zipcode variable, which in turn is added to API URL to allow the URL to be dynamic
+searchBtn.addEventListener('click', function (e){
+
+    $('#secondColFirstRow').empty()
+    $('#thirdColSecondRow').empty()
+
+    userCity = userInput.value;
+    userCities.unshift(userCity)
+    localStorage.setItem("City", JSON.stringify(userCities));
 
 
+   renderCities(e)
 
 
+   myApiCall(e, true)
+    
+})    
