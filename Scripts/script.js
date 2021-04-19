@@ -5,7 +5,7 @@ var myUl = document.getElementById('ulList');
 var dateNow = moment().format('LL');
 // var dateOne = moment(dateNow).add(1, 'days');
 
-console.log(dateNow)
+// console.log(dateNow)
 // console.log(dateOne)
 
 //Event listener for search button, whatever is entered in the input field, is saved to zipcode variable, which in turn is added to API URL to allow the URL to be dynamic
@@ -24,8 +24,13 @@ myUl.prepend(myLi)
 $(firstColSecondRowCol).append(myUl)
 }
 
-searchBtn.addEventListener('click', function (){
+firstColSecondRowCol.addEventListener('click', function (e) {
+    console.log(e.target.innerHTML)
+    // apiCall()
+})
 
+searchBtn.addEventListener('click', function (e){
+    console.log(e.target)
     $('#secondColFirstRow').empty()
     $('#thirdColSecondRow').empty()
 
@@ -42,8 +47,8 @@ searchBtn.addEventListener('click', function (){
 
     
 
-    var apiKey = "3c75bca6ddbb4f7ba74230517202912";
-    var myURL = `http://api.weatherapi.com/v1/forecast.json?key=3c75bca6ddbb4f7ba74230517202912&q=${userCity}&days=6`;
+    var apiKey = "49c1f536a5074f34a1a174340211904";
+    var myURL = `http://api.weatherapi.com/v1/forecast.json?key=49c1f536a5074f34a1a174340211904&q=${userCity}&days=5&aqi=no&alerts=no`;
     // var myURL = `http://api.weatherapi.com/v1/forecast.json?key=3c75bca6ddbb4f7ba74230517202912&q=${userCity}&days=6`;
     
     
@@ -116,6 +121,14 @@ searchBtn.addEventListener('click', function (){
     })
     
 })
+
+let apiCall = () => {
+    $.ajax({
+        url: myURL
+    }).then(function(response){
+        console.log(response)
+    })
+}
 
 
 
