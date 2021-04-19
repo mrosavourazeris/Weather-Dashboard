@@ -1,0 +1,23 @@
+{
+  "name": "Weather-Dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrosavourazeris/Weather-Dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrosavourazeris/Weather-Dashboard/issues"
+  },
+  "homepage": "https://github.com/mrosavourazeris/Weather-Dashboard#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
