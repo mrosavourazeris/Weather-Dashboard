@@ -31,13 +31,13 @@ This application allows the user to search a city and get the current weather as
 ---
 
 ## Usage 
-![Applicaton in use](public/reference/giphy.gif)
+![Applicaton in use](Public/reference/giphy.gif)
 
 ---
 
 ## Screenshots
-![Workout-Tracker](public/reference/1.png)
-![Workout-Tracker](public/reference/2.png)
+![Weather-Dashboard](Public/reference/1.png)
+![Weather-Dashboard](Public/reference/2.png)
 
 
 
