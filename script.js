@@ -45,7 +45,7 @@ firstColSecondRowCol.addEventListener("click", function (e) {
     $(firstColSecondRowCol).append(myUl);
 
     var apiKey = "49c1f536a5074f34a1a174340211904";
-    var myURL = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${userCity}&days=5&aqi=no&alerts=no`;
+    var myURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${userCity}&days=5&aqi=no&alerts=no`;
     // var myURL = `http://api.weatherapi.com/v1/forecast.json?key=3c75bca6ddbb4f7ba74230517202912&q=${userCity}&days=6`;
 
     // console.log(myURL)
@@ -153,7 +153,7 @@ searchBtn.addEventListener("click", function (e) {
   $(firstColSecondRowCol).append(myUl);
 
   var apiKey = "49c1f536a5074f34a1a174340211904";
-  var myURL = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${userCity}&days=5&aqi=no&alerts=no`;
+  var myURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${userCity}&days=5&aqi=no&alerts=no`;
   // var myURL = `http://api.weatherapi.com/v1/forecast.json?key=3c75bca6ddbb4f7ba74230517202912&q=${userCity}&days=6`;
 
   // console.log(myURL)
