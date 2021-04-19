@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description 
-This application allows the user to search a city and get the current weather as well as the 5-Day forecast. Cities that the user has searched are added under the search bar. The user can click a city in the history section to search for that city's weather again.
+This application allows the user to search a city and get the current weather as well as the 5-Day Forecast. Cities that the user has searched are added under the search bar. The user can click a city in the history section to search for that city's weather again.
 
 
 ---
